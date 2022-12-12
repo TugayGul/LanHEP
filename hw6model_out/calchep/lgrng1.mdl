@@ -1,0 +1,10 @@
+hw6
+ Lagrangian 
+P1   |P2   |P3   |P4   |>   Factor                                       <|> dLagrangian/ dA(p1) dA(p2) dA(p3)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <|
+B    |B    |h    |     |g*mb                                              |m1.m2
+aP1  |p1   |B    |     |-g                                                |G(m3)
+aP1  |p1   |h    |     |-g*m1/mb                                          |1
+aP2  |p2   |B    |     |-g                                                |G(m3)
+aP2  |p2   |h    |     |-g*m2/mb                                          |1
+aP3  |p3   |B    |     |-g                                                |G(m3)
+aP3  |p3   |h    |     |-g*m1/mb                                          |1

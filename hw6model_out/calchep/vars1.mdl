@@ -1,0 +1,8 @@
+hw6
+ Variables 
+ Name  | Value       |>  Comment                                   <|
+g      |1            |coupling constant
+mb     |91.188       |mass of bosonB
+m1     |172.5        |mass of fermion1
+m2     |1.777        |mass of fermion2
+m3     |4.24         |mass of fermion3

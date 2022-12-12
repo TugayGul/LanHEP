@@ -1,0 +1,49 @@
+% tugay gul, 1910264, Date 04.07.2021
+
+model hw6.
+parameter g = 1:'coupling constant'.
+
+vector B/B:(bosonB, mass mb = 91.188 ,texname B).
+
+% three fermions and their spinors. 
+%mass values for tau, top and bottom quarks since mass terms irrelevant.
+
+spinor p1/aP1: ('fermion1', mass m1 = 172.5).
+spinor p2/aP2: ('fermion2', mass m2 = 1.777).
+spinor p3/aP3: ('fermion3', mass m3 = 4.24 ).
+
+% spin 0 neutral abelian bosonic field. 
+% for mass term, instead of usin B and h coupling with mixing angle etc,
+%I simply used 1/mass of b. both b and h are singlets.
+
+scalar h/h:(higgs, mass mh = 1/mb ,gauge).
+
+% dirac and proca related kinetic energy and mass terms for the first vertex.
+
+let F^mu^nu=deriv^mu*B^nu-deriv^nu*B^mu.
+let LB = -1/4*F**2+(mb/2)*B**2.
+let LD1 = aP1*(i*gamma^mu*deriv^mu-m1)*p1.
+let LD2 = aP2*(i*gamma^mu*deriv^mu-m2)*p2.
+let LD3 = aP3*(i*gamma^mu*deriv^mu-m3)*p3.
+
+% interaction terms for first vertex.
+
+let Lint1 = -g*aP1*gamma*B*p1.
+let Lint2 = -g*aP2*gamma*B*p2.
+let Lint3 = -g*aP3*gamma*B*p3.
+
+% fermion-spin 0 boson part. free and interaction terms combined. last terms are related to interactions.
+% since I used mass of h as 1/mb and avoid to use phi with constants lambda and u for mass term relation,
+% I simply get interaction term as in the simplest form. 
+
+let L1 = 1/2*deriv^mu*h*deriv^mu*h-1/2*mh**2*h**2+aP1*(i*gamma^mu*deriv^mu-m1)*p1-m1/mb*g*aP1*h*p1.
+let L2 = 1/2*deriv^mu*h*deriv^mu*h-1/2*mh**2*h**2+aP2*(i*gamma^mu*deriv^mu-m2)*p2-m2/mb*g*aP2*h*p2.
+let L3 = 1/2*deriv^mu*h*deriv^mu*h-1/2*mh**2*h**2+aP3*(i*gamma^mu*deriv^mu-m3)*p3-m1/mb*g*aP3*h*p3.
+
+% spin 0 and spin 1 interaction field. last term is the interaction lagrangian.
+
+let LSLV = -1/4*F**2+mb**2/2*B^mu*B^mu+1/2*mh**2*h**2+1/2*deriv^mu*h*deriv^mu*h+1/2*mb*g*B^mu*h*B^mu.
+
+% full lagrangian of given model. pdf created by compiling latex output added in the directory.
+
+lterm LB + LD1 + LD2 + LD3 + Lint1 + Lint2 + Lint3 + L1 + L2 + L3 + LSLV.

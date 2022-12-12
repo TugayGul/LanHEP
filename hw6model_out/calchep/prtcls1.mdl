@@ -1,0 +1,8 @@
+hw6
+ Particles 
+Full   Name     | P | aP|  number  |spin2|mass|width|color|aux| LaTeX(A)       |  LateX(A+)         |
+bosonB          |B  |B  |          |2    |mb  |0    |1    |   |B               |B                   |
+fermion1        |p1 |aP1|          |1    |m1  |0    |1    |   |p1              |aP1                 |
+fermion2        |p2 |aP2|          |1    |m2  |0    |1    |   |p2              |aP2                 |
+fermion3        |p3 |aP3|          |1    |m3  |0    |1    |   |p3              |aP3                 |
+higgs           |h  |h  |25        |0    |mh  |0    |1    |G  |h               |h                   |
